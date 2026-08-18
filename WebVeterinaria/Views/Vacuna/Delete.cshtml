@@ -1,0 +1,42 @@
+﻿@model WebVeterinaria.DTOs.VacunaDTO
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Está seguro que desea eliminar esta vacuna?</h3>
+
+@if (ViewBag.NoSePuedeEliminar == true)
+{
+    <div class="alert alert-warning">@ViewBag.Mensaje</div>
+}
+
+<div>
+    <h4>Vacuna</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Nombre</dt>
+        <dd class="col-sm-9">@Model.Nombre</dd>
+
+        <dt class="col-sm-3">Descripción</dt>
+        <dd class="col-sm-9">@Model.Descripcion</dd>
+
+        <dt class="col-sm-3">Aplicaciones registradas</dt>
+        <dd class="col-sm-9">@Model.CantidadAplicaciones</dd>
+    </dl>
+
+    @if (ViewBag.NoSePuedeEliminar != true)
+    {
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdVacuna" />
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            <a asp-action="Index">Cancelar</a>
+        </form>
+    }
+    else
+    {
+        <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+    }
+</div>

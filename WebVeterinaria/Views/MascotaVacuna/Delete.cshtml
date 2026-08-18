@@ -1,0 +1,125 @@
+﻿@model WebVeterinaria.Models.MascotaVacuna
+
+@{
+    ViewData["Title"] = "Eliminar Vacuna";
+}
+
+    <div class="content-header">
+        <div class="container-fluid">
+
+            <h1>Eliminar Registro de Vacuna</h1>
+
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Confirmar eliminación
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+
+                            <div class="alert alert-warning">
+
+                                <i class="fas fa-exclamation-triangle"></i>
+
+                                ¿Está seguro de eliminar este registro
+                                de vacunación?
+
+                            </div>
+
+                            <dl class="row">
+
+                                <dt class="col-sm-4">
+                                    Dueño
+                                </dt>
+
+                                <dd class="col-sm-8">
+
+                                    @if (Model.IdMascotaNavigation?.IdDuenoNavigation != null)
+                                    {
+                                        @Model.IdMascotaNavigation.IdDuenoNavigation.Nombres
+                                        @Model.IdMascotaNavigation.IdDuenoNavigation.Apellidos
+                                    }
+
+                                </dd>
+
+                                <dt class="col-sm-4">
+                                    Mascota
+                                </dt>
+
+                                <dd class="col-sm-8">
+                                    @Model.IdMascotaNavigation?.Nombre
+                                </dd>
+
+                                <dt class="col-sm-4">
+                                    Vacuna
+                                </dt>
+
+                                <dd class="col-sm-8">
+                                    @Model.IdVacunaNavigation?.Nombre
+                                </dd>
+
+                                <dt class="col-sm-4">
+                                    Fecha de aplicación
+                                </dt>
+
+                                <dd class="col-sm-8">
+                                    @(Model.Fecha?.ToString("dd/MM/yyyy") ?? "-")
+                                </dd>
+
+                                <dt class="col-sm-4">
+                                    Próxima dosis
+                                </dt>
+
+                                <dd class="col-sm-8">
+                                    @(Model.ProximaDosis?.ToString("dd/MM/yyyy") ?? "-")
+                                </dd>
+
+                                <dt class="col-sm-4">
+                                    Observaciones
+                                </dt>
+
+                                <dd class="col-sm-8">
+                                    @(string.IsNullOrWhiteSpace(Model.Observaciones)
+                                        ? "Sin observaciones"
+                                        : Model.Observaciones)
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <div class="card-footer">
+
+                            <form asp-action="Delete" method="post">
+
+                                <input type="hidden"
+                                       asp-for="Id" />
+
+                                <button type="submit"
+                                        class="btn btn-danger">
+
+                                    <i class="fas fa-trash"></i>
+                                    Sí, eliminar
+
+                                </button>
+
+                                <a asp-action="Index"
+                                   class="btn btn-secondary">
+
+                                    Cancelar
+
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

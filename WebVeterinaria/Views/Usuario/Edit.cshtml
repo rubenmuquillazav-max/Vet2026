@@ -1,0 +1,60 @@
+﻿@model WebVeterinaria.DTOs.UsuarioEditDTO
+
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+
+<h1>Editar Usuario</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdUsuario" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-6 form-group mb-2">
+            <label asp-for="Nombres" class="control-label"></label>
+            <input asp-for="Nombres" class="form-control" />
+            <span asp-validation-for="Nombres" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group mb-2">
+            <label asp-for="Apellidos" class="control-label"></label>
+            <input asp-for="Apellidos" class="form-control" />
+            <span asp-validation-for="Apellidos" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="Usuario" class="control-label"></label>
+        <input asp-for="Usuario" class="form-control" autocomplete="off" />
+        <span asp-validation-for="Usuario" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="NuevaClave" class="control-label">Nueva contraseña</label>
+        <input asp-for="NuevaClave" class="form-control" autocomplete="new-password" placeholder="Dejar en blanco para no cambiarla" />
+        <span asp-validation-for="NuevaClave" class="text-danger"></span>
+        <small class="form-text text-muted">Solo llena este campo si deseas cambiar la contraseña actual.</small>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="Correo" class="control-label"></label>
+        <input asp-for="Correo" class="form-control" />
+        <span asp-validation-for="Correo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="IdRol" class="control-label">Rol</label>
+        <select asp-for="IdRol" asp-items="ViewBag.Roles" class="form-control">
+            <option value="">-- Seleccione --</option>
+        </select>
+        <span asp-validation-for="IdRol" class="text-danger"></span>
+    </div>
+
+    <div class="form-check mb-3">
+        <input asp-for="Estado" class="form-check-input" />
+        <label asp-for="Estado" class="form-check-label"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

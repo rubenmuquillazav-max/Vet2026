@@ -1,0 +1,53 @@
+﻿@model WebVeterinaria.DTOs.UsuarioCreateDTO
+
+@{
+    ViewData["Title"] = "Crear Usuario";
+}
+
+<h1>Crear Usuario</h1>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-6 form-group mb-2">
+            <label asp-for="Nombres" class="control-label"></label>
+            <input asp-for="Nombres" class="form-control" />
+            <span asp-validation-for="Nombres" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group mb-2">
+            <label asp-for="Apellidos" class="control-label"></label>
+            <input asp-for="Apellidos" class="form-control" />
+            <span asp-validation-for="Apellidos" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="Usuario" class="control-label"></label>
+        <input asp-for="Usuario" class="form-control" autocomplete="off" />
+        <span asp-validation-for="Usuario" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="Clave" class="control-label">Contraseña</label>
+        <input asp-for="Clave" class="form-control" autocomplete="new-password" />
+        <span asp-validation-for="Clave" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="Correo" class="control-label"></label>
+        <input asp-for="Correo" class="form-control" />
+        <span asp-validation-for="Correo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="IdRol" class="control-label">Rol</label>
+        <select asp-for="IdRol" asp-items="ViewBag.Roles" class="form-control">
+            <option value="">-- Seleccione --</option>
+        </select>
+        <span asp-validation-for="IdRol" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

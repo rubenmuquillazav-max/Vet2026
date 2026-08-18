@@ -1,0 +1,111 @@
+﻿@model IEnumerable<WebVeterinaria.DTOs.MascotaDTO>
+
+@{
+    ViewData["Title"] = "Mascotas";
+}
+
+<h1>Mascotas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear nueva</a>
+</p>
+
+<!-- FILTRO POR DUEÑO -->
+<div class="card mb-3">
+    <div class="card-body">
+
+        <form asp-action="Index" method="get">
+
+            <div class="row">
+
+                <div class="form-group col-md-6">
+                    <label>Dueño</label>
+
+                    <select name="idDueno"
+                            asp-items="ViewBag.DuenosFiltro"
+                            class="form-control">
+
+                        <option value="">
+                            -- Todos los dueños --
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 d-flex align-items-end">
+
+                    <button type="submit"
+                            class="btn btn-primary mr-2">
+
+                        <i class="fas fa-search"></i>
+                        Buscar
+
+                    </button>
+
+                    <a asp-action="Index"
+                       class="btn btn-secondary">
+
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Dueño</th>
+            <th>Especie</th>
+            <th>Raza</th>
+            <th>Sexo</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.DuenoNombreCompleto</td>
+                <td>@item.EspecieNombre</td>
+                <td>@item.RazaNombre</td>
+                <td>@item.Sexo</td>
+
+                <td>
+                    @(item.Estado ? "Activo" : "Inactivo")
+                </td>
+
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.IdMascota"
+                       class="btn btn-sm btn-warning">
+                        Editar
+                    </a>
+
+                    <a asp-action="Details"
+                       asp-route-id="@item.IdMascota"
+                       class="btn btn-sm btn-info">
+                        Detalles
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.IdMascota"
+                       class="btn btn-sm btn-danger">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

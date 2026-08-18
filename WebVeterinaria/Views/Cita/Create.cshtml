@@ -1,0 +1,232 @@
+﻿@model WebVeterinaria.Dtos.CitaCreateDto
+
+@{
+    ViewData["Title"] = "Nueva Cita";
+}
+
+
+    <div class="content-header">
+        <div class="container-fluid">
+            <h1>Nueva Cita</h1>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+
+                    <form asp-action="Create" method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger"></div>
+
+                        <!-- DUEÑO -->
+                        <div class="form-group">
+                            <label>Dueño</label>
+
+                            <select asp-for="IdDueno"
+                                    asp-items="ViewBag.Duenos"
+                                    class="form-control"
+                                    id="IdDueno">
+
+                                <option value="">-- Seleccione un dueño --</option>
+
+                            </select>
+
+                            <span asp-validation-for="IdDueno"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <!-- MASCOTA -->
+                        <div class="form-group">
+                            <label>Mascota</label>
+
+                            <select asp-for="IdMascota"
+                                    class="form-control"
+                                    id="IdMascota">
+
+                                <option value="">
+                                    -- Seleccione primero un dueño --
+                                </option>
+
+                            </select>
+
+                            <span asp-validation-for="IdMascota"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <!-- VETERINARIO -->
+                        <div class="form-group">
+                            <label>Veterinario</label>
+
+                            <select asp-for="IdVeterinario"
+                                    asp-items="ViewBag.Veterinarios"
+                                    class="form-control">
+
+                                <option value="">-- Seleccione --</option>
+
+                            </select>
+
+                            <span asp-validation-for="IdVeterinario"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <!-- FECHA Y HORA -->
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+
+                                <label>Fecha</label>
+
+                                <input asp-for="Fecha"
+                                       type="date"
+                                       class="form-control" />
+
+                                <span asp-validation-for="Fecha"
+                                      class="text-danger"></span>
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+
+                                <label>Hora</label>
+
+                                <input asp-for="Hora"
+                                       type="time"
+                                       class="form-control" />
+
+                                <span asp-validation-for="Hora"
+                                      class="text-danger"></span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- MOTIVO -->
+                        <div class="form-group">
+
+                            <label>Motivo</label>
+
+                            <textarea asp-for="Motivo"
+                                      class="form-control"
+                                      rows="3"></textarea>
+
+                        </div>
+
+                        <!-- ESTADO -->
+                        <div class="form-group">
+
+                            <label>Estado</label>
+
+                            <select asp-for="Estado"
+                                    asp-items="ViewBag.Estados"
+                                    class="form-control">
+                            </select>
+
+                        </div>
+
+                        <!-- BOTONES -->
+                        <button type="submit"
+                                class="btn btn-primary">
+
+                            <i class="fas fa-save"></i> Guardar
+
+                        </button>
+
+                        <a asp-action="Index"
+                           class="btn btn-secondary">
+
+                            Cancelar
+
+                        </a>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+
+        document.getElementById("IdDueno").addEventListener("change", function () {
+
+            const idDueno = this.value;
+
+            const mascotaSelect =
+                document.getElementById("IdMascota");
+
+            // Limpiar mascotas
+            mascotaSelect.innerHTML =
+                '<option value="">-- Cargando mascotas... --</option>';
+
+            // Si no seleccionó dueño
+            if (!idDueno) {
+
+                mascotaSelect.innerHTML =
+                    '<option value="">-- Seleccione primero un dueño --</option>';
+
+                return;
+            }
+
+            // Consultar mascotas
+            fetch(`/Cita/ObtenerMascotasPorDueno?idDueno=${idDueno}`)
+
+                .then(response => {
+
+                    if (!response.ok) {
+                        throw new Error("Error al obtener las mascotas");
+                    }
+
+                    return response.json();
+
+                })
+
+                .then(mascotas => {
+
+                    mascotaSelect.innerHTML =
+                        '<option value="">-- Seleccione una mascota --</option>';
+
+                    if (mascotas.length === 0) {
+
+                        mascotaSelect.innerHTML =
+                            '<option value="">-- Este dueño no tiene mascotas --</option>';
+
+                        return;
+                    }
+
+                    mascotas.forEach(mascota => {
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value = mascota.idMascota;
+                        option.textContent = mascota.nombre;
+
+                        mascotaSelect.appendChild(option);
+
+                    });
+
+                })
+
+                .catch(error => {
+
+                    console.error(error);
+
+                    mascotaSelect.innerHTML =
+                        '<option value="">-- Error al cargar mascotas --</option>';
+
+                });
+
+        });
+
+    </script>
+}

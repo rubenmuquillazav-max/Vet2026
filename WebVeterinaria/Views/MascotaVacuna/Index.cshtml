@@ -1,0 +1,161 @@
+﻿@model IEnumerable<WebVeterinaria.DTOs.MascotaVacunaListDTO>
+
+@{
+    ViewData["Title"] = "Registro de Vacunas";
+}
+
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Registro de Vacunas</h1>
+                </div>
+
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show">
+                    <i class="fas fa-check-circle"></i>
+                    @TempData["Success"]
+
+                    <button type="button"
+                            class="close"
+                            data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            }
+
+            <div class="card">
+
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <h3 class="card-title">
+                            <i class="fas fa-syringe"></i>
+                            Vacunas aplicadas
+                        </h3>
+
+                        <a asp-action="Create"
+                           class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Registrar vacuna
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-hover">
+
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Dueño</th>
+                                    <th>Mascota</th>
+                                    <th>Vacuna</th>
+                                    <th>Fecha</th>
+                                    <th>Próxima dosis</th>
+                                    <th>Observaciones</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @if (Model != null && Model.Any())
+                                {
+                                    int contador = 1;
+
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+
+                                            <td>@contador</td>
+
+                                            <td>
+                                                @item.NombreDueno
+                                            </td>
+
+                                            <td>
+                                                <strong>
+                                                    @item.NombreMascota
+                                                </strong>
+                                            </td>
+
+                                            <td>
+                                                @item.NombreVacuna
+                                            </td>
+
+                                            <td>
+                                                @(item.Fecha?.ToString("dd/MM/yyyy") ?? "-")
+                                            </td>
+
+                                            <td>
+                                                @(item.ProximaDosis?.ToString("dd/MM/yyyy") ?? "-")
+                                            </td>
+
+                                            <td>
+                                                @if (!string.IsNullOrWhiteSpace(item.Observaciones))
+                                                {
+                                                    @item.Observaciones
+                                                }
+                                                else
+                                                {
+                                                    <span class="text-muted">
+                                                        Sin observaciones
+                                                    </span>
+                                                }
+                                            </td>
+
+                                            <td>
+                                                <div class="btn-group">
+
+                                                    <a asp-action="Delete"
+                                                       asp-route-id="@item.Id"
+                                                       class="btn btn-sm btn-danger"
+                                                       title="Eliminar">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+
+                                                </div>
+                                            </td>
+
+                                        </tr>
+
+                                        contador++;
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="8"
+                                            class="text-center text-muted">
+                                            <i class="fas fa-syringe fa-2x mb-2"></i>
+                                            <br />
+                                            No existen registros de vacunas.
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>

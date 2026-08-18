@@ -1,0 +1,48 @@
+﻿@model WebVeterinaria.Models.Atencion
+
+@{
+    ViewData["Title"] = "Detalle de Atención";
+}
+
+    <div class="content-header">
+        <div class="container-fluid">
+            <h1>Detalle de Atención</h1>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">Mascota</dt>
+                        <dd class="col-sm-9">@Model.IdCitaNavigation?.IdMascotaNavigation?.Nombre</dd>
+
+                        <dt class="col-sm-3">Veterinario</dt>
+                        <dd class="col-sm-9">@Model.IdCitaNavigation?.IdVeterinarioNavigation?.Nombres @Model.IdCitaNavigation?.IdVeterinarioNavigation?.Apellidos</dd>
+
+                        <dt class="col-sm-3">Fecha de atención</dt>
+                        <dd class="col-sm-9">@Model.Fecha?.ToString("dd/MM/yyyy HH:mm")</dd>
+
+                        <dt class="col-sm-3">Temperatura</dt>
+                        <dd class="col-sm-9">@Model.Temperatura °C</dd>
+
+                        <dt class="col-sm-3">Peso</dt>
+                        <dd class="col-sm-9">@Model.Peso kg</dd>
+
+                        <dt class="col-sm-3">Diagnóstico</dt>
+                        <dd class="col-sm-9">@Model.Diagnostico</dd>
+
+                        <dt class="col-sm-3">Tratamiento</dt>
+                        <dd class="col-sm-9">@Model.Tratamiento</dd>
+
+                        <dt class="col-sm-3">Observaciones</dt>
+                        <dd class="col-sm-9">@Model.Observaciones</dd>
+                    </dl>
+
+                    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+                    <a asp-action="Edit" asp-route-id="@Model.IdAtencion" class="btn btn-warning">Editar</a>
+                </div>
+            </div>
+        </div>
+    </section>

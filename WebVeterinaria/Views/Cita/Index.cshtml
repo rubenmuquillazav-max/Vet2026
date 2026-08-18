@@ -1,0 +1,202 @@
+﻿@model List<WebVeterinaria.Dtos.CitaListDto>
+
+@{
+    ViewData["Title"] = "Citas";
+}
+
+
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Citas</h1>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a asp-action="Create" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Nueva Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+
+            <form asp-action="Index"
+                  method="get"
+                  class="row">
+
+                <div class="form-group col-md-4">
+                    <label>Dueño</label>
+
+                    <select name="idDueno"
+                            asp-items="ViewBag.DuenosFiltro"
+                            class="form-control">
+
+                        <option value="">
+                            -- Todos los dueños --
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Fecha</label>
+
+                    <input type="date"
+                           name="fecha"
+                           value="@ViewBag.FechaFiltro"
+                           class="form-control" />
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Estado</label>
+
+                    <select name="estado"
+                            class="form-control">
+
+                        <option value="">
+                            -- Todos los estados --
+                        </option>
+
+                        <option value="PENDIENTE"
+                                selected="@(ViewBag.EstadoFiltro == "PENDIENTE")">
+                            PENDIENTE
+                        </option>
+
+                        <option value="CANCELADA"
+                                selected="@(ViewBag.EstadoFiltro == "CANCELADA")">
+                            CANCELADA
+                        </option>
+
+                        <option value="ATENDIDA"
+                                selected="@(ViewBag.EstadoFiltro == "ATENDIDA")">
+                            ATENDIDA
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="form-group col-md-2 d-flex align-items-end">
+
+                    <button type="submit"
+                            class="btn btn-primary mr-2">
+
+                        <i class="fas fa-search"></i>
+                        Buscar
+
+                    </button>
+
+                    <a asp-action="Index"
+                       class="btn btn-secondary">
+
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    @TempData["Success"]
+                </div>
+            }
+
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Dueño</th>
+                                <th>Mascota</th>
+                                <th>Veterinario</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Motivo</th>
+                                <th>Estado</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.IdCita</td>
+                                    <td>@item.NombreDueno</td>
+                                    <td>@item.NombreMascota</td>
+                                    <td>@item.NombreVeterinario</td>
+                                    <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.Hora.ToString("HH:mm")</td>
+                                    <td>@item.Motivo</td>
+                                    <td>
+                                        @{
+                                            var badgeClass = item.Estado switch
+                                            {
+                                                "PENDIENTE" => "badge-warning",
+                                                "ATENDIDA" => "badge-success",
+                                                "CANCELADA" => "badge-danger",
+                                                _ => "badge-secondary"
+                                            };
+                                        }
+                                        <span class="badge @badgeClass">@item.Estado</span>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+
+                                            <!-- VER DETALLE: siempre disponible -->
+                                            <a asp-action="Details"
+                                               asp-route-id="@item.IdCita"
+                                               class="btn btn-sm btn-info"
+                                               title="Ver detalle">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+
+                                            @if (item.Estado == "PENDIENTE")
+                                            {
+                                                <!-- EDITAR -->
+                                                <a asp-action="Edit"
+                                                   asp-route-id="@item.IdCita"
+                                                   class="btn btn-sm btn-warning"
+                                                   title="Editar">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+
+                                                <!-- ELIMINAR -->
+                                                <a asp-action="Delete"
+                                                   asp-route-id="@item.IdCita"
+                                                   class="btn btn-sm btn-danger"
+                                                   title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <!-- CITA CERRADA -->
+                                                <span class="btn btn-sm btn-secondary disabled"
+                                                      title="Cita cerrada">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                            }
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,43 @@
+﻿@model WebVeterinaria.Models.Atencion
+
+@{
+    ViewData["Title"] = "Eliminar Atención";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <h1>Eliminar Atención</h1>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">¿Confirma que desea eliminar esta atención?</h3>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">Mascota</dt>
+                        <dd class="col-sm-9">@Model.IdCitaNavigation?.IdMascotaNavigation?.Nombre</dd>
+
+                        <dt class="col-sm-3">Fecha</dt>
+                        <dd class="col-sm-9">@Model.Fecha?.ToString("dd/MM/yyyy HH:mm")</dd>
+
+                        <dt class="col-sm-3">Diagnóstico</dt>
+                        <dd class="col-sm-9">@Model.Diagnostico</dd>
+                    </dl>
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="IdAtencion" />
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

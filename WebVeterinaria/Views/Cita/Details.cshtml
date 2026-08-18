@@ -1,0 +1,61 @@
+﻿@model WebVeterinaria.Models.Citum
+
+@{
+    ViewData["Title"] = "Detalle de Cita";
+}
+
+
+    <div class="content-header">
+        <div class="container-fluid">
+            <h1>Detalle de Cita</h1>
+        </div>
+    </div>
+
+    @if (Model.Estado == "ATENDIDA")
+    {
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            Esta cita ya fue atendida y no puede modificarse.
+        </div>
+    }
+    else if (Model.Estado == "CANCELADA")
+    {
+        <div class="alert alert-danger">
+            <i class="fas fa-ban"></i>
+            Esta cita fue cancelada y no puede modificarse.
+        </div>
+    }
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">Mascota</dt>
+                        <dd class="col-sm-9">@Model.IdMascotaNavigation.Nombre</dd>
+
+                        <dt class="col-sm-3">Veterinario</dt>
+                        <dd class="col-sm-9">@Model.IdVeterinarioNavigation.Nombres @Model.IdVeterinarioNavigation.Apellidos</dd>
+
+                        <dt class="col-sm-3">Fecha</dt>
+                        <dd class="col-sm-9">@Model.Fecha.ToString("dd/MM/yyyy")</dd>
+
+                        <dt class="col-sm-3">Hora</dt>
+                        <dd class="col-sm-9">@Model.Hora.ToString("HH:mm")</dd>
+
+                        <dt class="col-sm-3">Motivo</dt>
+                        <dd class="col-sm-9">@Model.Motivo</dd>
+
+                        <dt class="col-sm-3">Estado</dt>
+                        <dd class="col-sm-9">@Model.Estado</dd>
+
+                        <dt class="col-sm-3">Registrado</dt>
+                        <dd class="col-sm-9">@Model.FechaRegistro?.ToString("dd/MM/yyyy HH:mm")</dd>
+                    </dl>
+
+                    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+                    <a asp-action="Edit" asp-route-id="@Model.IdCita" class="btn btn-warning">Editar</a>
+                </div>
+            </div>
+        </div>
+    </section>

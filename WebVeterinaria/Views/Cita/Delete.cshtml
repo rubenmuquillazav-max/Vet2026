@@ -1,0 +1,46 @@
+﻿@model WebVeterinaria.Models.Citum
+
+@{
+    ViewData["Title"] = "Eliminar Cita";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <h1>Eliminar Cita</h1>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">¿Confirma que desea eliminar esta cita?</h3>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">Mascota</dt>
+                        <dd class="col-sm-9">@Model.IdMascotaNavigation.Nombre</dd>
+
+                        <dt class="col-sm-3">Veterinario</dt>
+                        <dd class="col-sm-9">@Model.IdVeterinarioNavigation.Nombres @Model.IdVeterinarioNavigation.Apellidos</dd>
+
+                        <dt class="col-sm-3">Fecha</dt>
+                        <dd class="col-sm-9">@Model.Fecha.ToString("dd/MM/yyyy")</dd>
+
+                        <dt class="col-sm-3">Hora</dt>
+                        <dd class="col-sm-9">@Model.Hora.ToString("HH:mm")</dd>
+                    </dl>
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="IdCita" />
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

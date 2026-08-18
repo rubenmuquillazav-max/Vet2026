@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebVeterinaria.DTOs.RazaDTO>
+
+@{
+    ViewData["Title"] = "Razas";
+}
+
+<h1>Razas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear nueva</a>
+</p>
+
+    <form asp-action="Index" method="get" class="mb-3">
+        <div class="row">
+
+            <div class="col-md-5">
+                <label>Filtrar por especie</label>
+
+                <select name="idEspecie" class="form-control">
+                    <option value="">-- Todas las especies --</option>
+
+                    @foreach (var especie in ViewBag.Especies)
+                    {
+                        <option value="@especie.Value"
+                                selected="@(especie.Value == ViewBag.IdEspecieSeleccionada?.ToString())">
+                            @especie.Text
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-3 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary mr-2">
+                    <i class="fas fa-search"></i>
+                    Buscar
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    Limpiar
+                </a>
+            </div>
+        </div>
+    </form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Especie</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.EspecieNombre</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdRaza" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.IdRaza" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.IdRaza" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

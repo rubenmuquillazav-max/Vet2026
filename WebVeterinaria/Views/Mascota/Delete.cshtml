@@ -1,0 +1,28 @@
+﻿@model WebVeterinaria.DTOs.MascotaDTO
+
+@{
+    ViewData["Title"] = "Eliminar Mascota";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Estás seguro que deseas eliminar este registro?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Nombre</dt>
+        <dd class="col-sm-9">@Model.Nombre</dd>
+
+        <dt class="col-sm-3">Dueño</dt>
+        <dd class="col-sm-9">@Model.DuenoNombreCompleto</dd>
+
+        <dt class="col-sm-3">Especie / Raza</dt>
+        <dd class="col-sm-9">@Model.EspecieNombre / @Model.RazaNombre</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdMascota" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

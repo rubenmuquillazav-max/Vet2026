@@ -1,0 +1,21 @@
+﻿@model WebVeterinaria.DTOs.EspecieDTO
+
+@{
+    ViewData["Title"] = "Detalles de la Especie";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Nombre</dd>
+
+        <dt class="col-sm-2">Razas registradas</dt>
+        <dd class="col-sm-10">@Model.CantidadRazas</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdEspecie" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

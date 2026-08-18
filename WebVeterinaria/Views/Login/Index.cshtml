@@ -1,0 +1,224 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iniciar sesión - Veterinaria</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+            :root {
+                --vet-primary: #0d8a6f;
+                --vet-primary-dark: #096b56;
+                --vet-accent: #ffb84c;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #0d8a6f 0%, #0a6b56 100%);
+            }
+
+            .login-wrapper {
+                min-height: 100vh;
+            }
+
+            .login-card {
+                border: none;
+                border-radius: 1.25rem;
+                overflow: hidden;
+                box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.25);
+                max-width: 900px;
+                width: 100%;
+            }
+
+            .login-brand {
+                background: linear-gradient(160deg, var(--vet-primary) 0%, var(--vet-primary-dark) 100%);
+                color: #fff;
+                padding: 3rem 2.5rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+                .login-brand::before {
+                    content: "\F5A2";
+                    font-family: "bootstrap-icons";
+                    position: absolute;
+                    font-size: 18rem;
+                    opacity: 0.08;
+                    right: -3rem;
+                    bottom: -3rem;
+                    transform: rotate(-10deg);
+                }
+
+                .login-brand .icon-circle {
+                    width: 72px;
+                    height: 72px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.15);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 2rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                .login-brand h2 {
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                }
+
+                .login-brand p {
+                    opacity: 0.9;
+                    font-size: 0.95rem;
+                }
+
+            .login-form-side {
+                padding: 3rem 2.5rem;
+                background: #fff;
+            }
+
+            .form-label {
+                font-weight: 500;
+                color: #333;
+                font-size: 0.9rem;
+            }
+
+            .input-group-text {
+                background-color: #f1f7f5;
+                border-right: none;
+                color: var(--vet-primary);
+            }
+
+            .form-control {
+                border-left: none;
+                padding-top: 0.65rem;
+                padding-bottom: 0.65rem;
+            }
+
+                .form-control:focus {
+                    box-shadow: none;
+                    border-color: #ced4da;
+                }
+
+            .input-group:focus-within .input-group-text,
+            .input-group:focus-within .form-control {
+                border-color: var(--vet-primary);
+            }
+
+            .input-group:focus-within .form-control {
+                border-left: none;
+            }
+
+            .btn-vet {
+                background-color: var(--vet-primary);
+                border-color: var(--vet-primary);
+                font-weight: 600;
+                padding: 0.7rem;
+                letter-spacing: 0.3px;
+                transition: 0.2s ease;
+            }
+
+                .btn-vet:hover {
+                    background-color: var(--vet-primary-dark);
+                    border-color: var(--vet-primary-dark);
+                }
+
+            .feature-list li {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                margin-bottom: 0.9rem;
+                font-size: 0.9rem;
+            }
+
+            .feature-list i {
+                color: var(--vet-accent);
+            }
+
+            @@media (max-width: 767.98px) {
+                .login-brand {
+                    padding: 2.5rem 2rem;
+                    text-align: center;
+                }
+
+                    .login-brand::before {
+                        display: none;
+                    }
+
+                    .login-brand .icon-circle {
+                        margin: 0 auto 1rem auto;
+                    }
+
+                .feature-list {
+                    display: none;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper d-flex justify-content-center align-items-center p-3">
+        <div class="card login-card">
+            <div class="row g-0">
+                <!-- Panel izquierdo: Branding -->
+                <div class="col-md-5 login-brand d-flex flex-column justify-content-center">
+                    <div class="icon-circle">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </div>
+                    <h2 class="mb-2">MediVet</h2>
+                    <p class="mb-4">Sistema de gestión veterinaria integral para el cuidado de tus pacientes.</p>
+                    <ul class="list-unstyled feature-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Gestión de citas y atenciones</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Historial clínico de mascotas</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Control de vacunas y tratamientos</li>
+                    </ul>
+                </div>
+
+                <!-- Panel derecho: Formulario -->
+                <div class="col-md-7 login-form-side d-flex flex-column justify-content-center">
+                    <div class="mb-4">
+                        <h3 class="fw-bold mb-1">Bienvenido de nuevo</h3>
+                        <p class="text-muted mb-0">Ingresa tus credenciales para continuar</p>
+                    </div>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger d-flex align-items-center gap-2 py-2">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <span>@ViewBag.Error</span>
+                        </div>
+                    }
+
+                    <form asp-action="Index" asp-controller="Login" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Usuario</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                                <input type="text" name="usuario" class="form-control" placeholder="Ingresa tu usuario" required />
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                <input type="password" name="clave" class="form-control" placeholder="Ingresa tu contraseña" required />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-vet text-white w-100">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Ingresar
+                        </button>
+                    </form>
+
+                    <p class="text-center text-muted mt-4 mb-0" style="font-size: 0.8rem;">
+                        © @DateTime.Now.Year MediVet · Sistema de Gestión Veterinaria
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

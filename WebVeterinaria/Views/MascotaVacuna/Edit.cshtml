@@ -1,0 +1,180 @@
+﻿@model WebVeterinaria.DTOs.MascotaVacunaCreateDTO
+
+@{
+    ViewData["Title"] = "Editar Vacuna";
+}
+
+    <div class="content-header">
+        <div class="container-fluid">
+
+            <div class="row mb-2">
+
+                <div class="col-sm-6">
+                    <h1>Editar Registro de Vacuna</h1>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-syringe"></i>
+                                Modificar vacunación
+                            </h3>
+                        </div>
+
+                        <form asp-action="Edit" method="post">
+
+                            <input type="hidden" name="id" value="@ViewBag.IdRegistro" />
+
+                            <div class="card-body">
+
+                                <div asp-validation-summary="ModelOnly"
+                                     class="text-danger">
+                                </div>
+
+                                <!-- DUEÑO SOLO INFORMACIÓN -->
+                                <div class="form-group">
+
+                                    <label>Dueño</label>
+
+                                    <input type="text"
+                                           class="form-control"
+                                           value="@ViewBag.NombreDueno"
+                                           readonly />
+
+                                </div>
+
+                                <!-- MASCOTA SOLO INFORMACIÓN -->
+                                <div class="form-group">
+
+                                    <label>Mascota</label>
+
+                                    <input type="text"
+                                           class="form-control"
+                                           value="@ViewBag.NombreMascota"
+                                           readonly />
+
+                                </div>
+
+                                <!-- VACUNA -->
+                                <div class="form-group">
+
+                                    <label asp-for="IdVacuna">
+                                        Vacuna
+                                    </label>
+
+                                    <select asp-for="IdVacuna"
+                                            asp-items="ViewBag.Vacunas"
+                                            class="form-control">
+
+                                        <option value="">
+                                            -- Seleccione una vacuna --
+                                        </option>
+
+                                    </select>
+
+                                    <span asp-validation-for="IdVacuna"
+                                          class="text-danger">
+                                    </span>
+
+                                </div>
+
+                                <!-- FECHAS -->
+                                <div class="row">
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label asp-for="Fecha">
+                                                Fecha de aplicación
+                                            </label>
+
+                                            <input asp-for="Fecha"
+                                                   type="date"
+                                                   class="form-control" />
+
+                                            <span asp-validation-for="Fecha"
+                                                  class="text-danger">
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label asp-for="ProximaDosis">
+                                                Próxima dosis
+                                            </label>
+
+                                            <input asp-for="ProximaDosis"
+                                                   type="date"
+                                                   class="form-control" />
+
+                                            <span asp-validation-for="ProximaDosis"
+                                                  class="text-danger">
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- OBSERVACIONES -->
+                                <div class="form-group">
+
+                                    <label asp-for="Observaciones">
+                                        Observaciones
+                                    </label>
+
+                                    <textarea asp-for="Observaciones"
+                                              class="form-control"
+                                              rows="4"></textarea>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit"
+                                        class="btn btn-primary">
+
+                                    <i class="fas fa-save"></i>
+                                    Guardar cambios
+                                </button>
+
+                                <a asp-action="Index"
+                                   class="btn btn-secondary">
+
+                                    <i class="fas fa-arrow-left"></i>
+                                    Cancelar
+
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

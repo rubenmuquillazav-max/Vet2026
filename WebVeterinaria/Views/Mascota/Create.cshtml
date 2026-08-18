@@ -1,0 +1,108 @@
+﻿@model WebVeterinaria.DTOs.MascotaFormDTO
+
+@{
+    ViewData["Title"] = "Crear Mascota";
+}
+
+<h1>Crear Mascota</h1>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group mb-2">
+        <label asp-for="Nombre" class="control-label"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="IdDueno" class="control-label">Dueño</label>
+        <select asp-for="IdDueno" asp-items="ViewBag.Duenos" class="form-control">
+            <option value="">-- Seleccione --</option>
+        </select>
+        <span asp-validation-for="IdDueno" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 form-group mb-2">
+            <label asp-for="IdEspecie" class="control-label">Especie</label>
+            <select asp-for="IdEspecie" asp-items="ViewBag.Especies" id="IdEspecie" class="form-control">
+                <option value="">-- Seleccione --</option>
+            </select>
+            <span asp-validation-for="IdEspecie" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group mb-2">
+            <label asp-for="IdRaza" class="control-label">Raza</label>
+            <select asp-for="IdRaza" id="IdRaza" class="form-control">
+                <option value="">-- Primero seleccione una especie --</option>
+            </select>
+            <span asp-validation-for="IdRaza" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 form-group mb-2">
+            <label asp-for="FechaNacimiento" class="control-label"></label>
+            <input asp-for="FechaNacimiento" class="form-control" />
+        </div>
+        <div class="col-md-4 form-group mb-2">
+            <label asp-for="Sexo" class="control-label"></label>
+            <select asp-for="Sexo" class="form-control">
+                <option value="">-- Seleccione --</option>
+                <option value="M">Macho</option>
+                <option value="H">Hembra</option>
+            </select>
+        </div>
+        <div class="col-md-4 form-group mb-2">
+            <label asp-for="Peso" class="control-label">Peso (kg)</label>
+            <input asp-for="Peso" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="Color" class="control-label"></label>
+        <input asp-for="Color" class="form-control" />
+    </div>
+    <div class="form-group mb-2">
+        <label asp-for="Alergias" class="control-label"></label>
+        <textarea asp-for="Alergias" class="form-control" rows="2"></textarea>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Observaciones" class="control-label"></label>
+        <textarea asp-for="Observaciones" class="form-control" rows="2"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('IdEspecie').addEventListener('change', function () {
+            const idEspecie = this.value;
+            const selectRaza = document.getElementById('IdRaza');
+
+            selectRaza.innerHTML = '<option value="">Cargando...</option>';
+
+            if (!idEspecie) {
+                selectRaza.innerHTML = '<option value="">-- Primero seleccione una especie --</option>';
+                return;
+            }
+
+            fetch('/Mascota/RazasPorEspecie?idEspecie=' + idEspecie)
+                .then(response => response.json())
+                .then(data => {
+                    selectRaza.innerHTML = '<option value="">-- Seleccione --</option>';
+                    data.forEach(raza => {
+                        const option = document.createElement('option');
+                        option.value = raza.id;
+                        option.textContent = raza.nombre;
+                        selectRaza.appendChild(option);
+                    });
+                })
+                .catch(() => {
+                    selectRaza.innerHTML = '<option value="">Error al cargar razas</option>';
+                });
+        });
+    </script>
+}
