@@ -3,36 +3,48 @@
   "WorkspaceRootPath": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\views\\mascotavacuna\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:views\\mascotavacuna\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\controllers\\mascotavacunacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:controllers\\mascotavacunacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\views\\mascota\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:views\\mascota\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\repositories\\imascotavacunarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:repositories\\imascotavacunarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\controllers\\mascotacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:controllers\\mascotacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\repositories\\mascotavacunarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:repositories\\mascotavacunarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\repositories\\mascotarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:repositories\\mascotarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\views\\atencion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:views\\atencion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\repositories\\imascotarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:repositories\\imascotarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\controllers\\atencioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:controllers\\atencioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\repositories\\atencionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:repositories\\atencionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\repositories\\iatencionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:repositories\\iatencionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\dtos\\atenciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:dtos\\atenciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\models\\atencion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:models\\atencion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\views\\cita\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:views\\cita\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\dtos\\citadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|solutionrelative:dtos\\citadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52CC1021-AA64-75EE-35FA-198A2F73A0EF}|WebVeterinaria.csproj|d:\\ruben\\cibertec\\5to ciclo\\des serv web i\\proyecto\\webveterinaria\\dtos\\mascotavacunalistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,97 +70,137 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
-              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "Controllers\\DashboardController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAgwDwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T01:38:40.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAAAJoAAAAGAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\MascotaVacuna\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\MascotaVacuna\\Index.cshtml",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\MascotaVacuna\\Index.cshtml",
+              "RelativeToolTip": "Views\\MascotaVacuna\\Index.cshtml",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAAABcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-08-17T01:36:38.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\Mascota\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Mascota\\Index.cshtml",
-              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\Mascota\\Index.cshtml",
-              "RelativeToolTip": "Views\\Mascota\\Index.cshtml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAG4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-08-17T01:25:40.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IMascotaRepository.cs",
-              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\IMascotaRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\IMascotaRepository.cs",
-              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\IMascotaRepository.cs",
-              "RelativeToolTip": "Repositories\\IMascotaRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T01:21:38.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MascotaRepository.cs",
-              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\MascotaRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\MascotaRepository.cs",
-              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\MascotaRepository.cs",
-              "RelativeToolTip": "Repositories\\MascotaRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwCEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T01:21:06.127Z",
+              "WhenOpened": "2026-08-19T01:54:59.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MascotaController.cs",
-              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Controllers\\MascotaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MascotaController.cs",
-              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Controllers\\MascotaController.cs",
-              "RelativeToolTip": "Controllers\\MascotaController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAzwCYAAAAJAAAAAAAAAA==",
+              "Title": "MascotaVacunaRepository.cs",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\MascotaVacunaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\MascotaVacunaRepository.cs",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\MascotaVacunaRepository.cs",
+              "RelativeToolTip": "Repositories\\MascotaVacunaRepository.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAQwKAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T01:19:39.846Z",
+              "WhenOpened": "2026-08-19T01:52:10.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IMascotaVacunaRepository.cs",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\IMascotaVacunaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IMascotaVacunaRepository.cs",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\IMascotaVacunaRepository.cs",
+              "RelativeToolTip": "Repositories\\IMascotaVacunaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T01:52:03.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MascotaVacunaController.cs",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Controllers\\MascotaVacunaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MascotaVacunaController.cs",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Controllers\\MascotaVacunaController.cs",
+              "RelativeToolTip": "Controllers\\MascotaVacunaController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwC8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T01:51:38.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Atencion.cs",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Models\\Atencion.cs",
+              "RelativeDocumentMoniker": "Models\\Atencion.cs",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Models\\Atencion.cs",
+              "RelativeToolTip": "Models\\Atencion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T00:20:34.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\Atencion\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Atencion\\Index.cshtml",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\Atencion\\Index.cshtml",
+              "RelativeToolTip": "Views\\Atencion\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-19T00:07:45.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AtencionDto.cs",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Dtos\\AtencionDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\AtencionDto.cs",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Dtos\\AtencionDto.cs",
+              "RelativeToolTip": "Dtos\\AtencionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwBAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T00:00:48.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AtencionRepository.cs",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\AtencionRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\AtencionRepository.cs",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\AtencionRepository.cs",
+              "RelativeToolTip": "Repositories\\AtencionRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwFgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T00:00:31.407Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "CitaDto.cs",
-              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Dtos\\CitaDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\CitaDto.cs",
-              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Dtos\\CitaDto.cs",
-              "RelativeToolTip": "Dtos\\CitaDto.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADcAAAAqAAAAAAAAAA==",
+              "Title": "IAtencionRepository.cs",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\IAtencionRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IAtencionRepository.cs",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Repositories\\IAtencionRepository.cs",
+              "RelativeToolTip": "Repositories\\IAtencionRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T03:38:16.903Z"
+              "WhenOpened": "2026-08-18T23:59:53.626Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "AtencionController.cs",
+              "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Controllers\\AtencionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AtencionController.cs",
+              "ToolTip": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Controllers\\AtencionController.cs",
+              "RelativeToolTip": "Controllers\\AtencionController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAowDwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T23:59:09.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Views\\Cita\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Cita\\Index.cshtml",
@@ -161,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "MascotaVacunaListDTO.cs",
               "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Dtos\\MascotaVacunaListDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\MascotaVacunaListDTO.cs",
@@ -173,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "MascotaVacunaCreateDTO.cs",
               "DocumentMoniker": "D:\\Ruben\\Cibertec\\5to Ciclo\\Des Serv Web I\\Proyecto\\WebVeterinaria\\Dtos\\MascotaVacunaCreateDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\MascotaVacunaCreateDTO.cs",

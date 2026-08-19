@@ -14,12 +14,27 @@ namespace WebVeterinaria.Repositories
             _context = context;
         }
 
-        public async Task<List<MascotaVacunaListDTO>> GetAllAsync()
+        // =========================================================
+        // LISTAR VACUNAS CON FILTRO OPCIONAL POR DUEÑO
+        // =========================================================
+        public async Task<List<MascotaVacunaListDTO>> GetAllAsync(
+            int? idDueno = null)
         {
-            return await _context.MascotaVacunas
+            var consulta = _context.MascotaVacunas
                 .Include(mv => mv.IdMascotaNavigation)
                     .ThenInclude(m => m.IdDuenoNavigation)
                 .Include(mv => mv.IdVacunaNavigation)
+                .AsQueryable();
+
+            // FILTRO POR DUEÑO
+            if (idDueno.HasValue)
+            {
+                consulta = consulta.Where(mv =>
+                    mv.IdMascotaNavigation != null &&
+                    mv.IdMascotaNavigation.IdDueno == idDueno.Value);
+            }
+
+            return await consulta
                 .OrderByDescending(mv => mv.Fecha)
                 .Select(mv => new MascotaVacunaListDTO
                 {
@@ -52,6 +67,10 @@ namespace WebVeterinaria.Repositories
                 .ToListAsync();
         }
 
+
+        // =========================================================
+        // OBTENER REGISTRO POR ID
+        // =========================================================
         public async Task<MascotaVacuna?> GetByIdAsync(int id)
         {
             return await _context.MascotaVacunas
@@ -61,6 +80,10 @@ namespace WebVeterinaria.Repositories
                 .FirstOrDefaultAsync(mv => mv.Id == id);
         }
 
+
+        // =========================================================
+        // REGISTRAR
+        // =========================================================
         public async Task AddAsync(MascotaVacuna mascotaVacuna)
         {
             _context.MascotaVacunas.Add(mascotaVacuna);
@@ -68,6 +91,10 @@ namespace WebVeterinaria.Repositories
             await _context.SaveChangesAsync();
         }
 
+
+        // =========================================================
+        // ACTUALIZAR
+        // =========================================================
         public async Task UpdateAsync(MascotaVacuna mascotaVacuna)
         {
             _context.MascotaVacunas.Update(mascotaVacuna);
@@ -75,6 +102,10 @@ namespace WebVeterinaria.Repositories
             await _context.SaveChangesAsync();
         }
 
+
+        // =========================================================
+        // ELIMINAR
+        // =========================================================
         public async Task DeleteAsync(int id)
         {
             var registro = await _context.MascotaVacunas
@@ -88,6 +119,10 @@ namespace WebVeterinaria.Repositories
             }
         }
 
+
+        // =========================================================
+        // OBTENER MASCOTAS
+        // =========================================================
         public async Task<List<Mascotum>> GetMascotasAsync()
         {
             return await _context.Mascota
@@ -97,18 +132,29 @@ namespace WebVeterinaria.Repositories
                 .ToListAsync();
         }
 
+
+        // =========================================================
+        // OBTENER MASCOTAS POR DUEÑO
+        // =========================================================
+        public async Task<List<Mascotum>> GetMascotasPorDuenoAsync(
+            int idDueno)
+        {
+            return await _context.Mascota
+                .Where(m =>
+                    m.IdDueno == idDueno &&
+                    m.Estado == true)
+                .OrderBy(m => m.Nombre)
+                .ToListAsync();
+        }
+
+
+        // =========================================================
+        // OBTENER VACUNAS
+        // =========================================================
         public async Task<List<Vacuna>> GetVacunasAsync()
         {
             return await _context.Vacunas
                 .OrderBy(v => v.Nombre)
-                .ToListAsync();
-        }
-
-        public async Task<List<Mascotum>> GetMascotasPorDuenoAsync(int idDueno)
-        {
-            return await _context.Mascota
-                .Where(m => m.IdDueno == idDueno && m.Estado == true)
-                .OrderBy(m => m.Nombre)
                 .ToListAsync();
         }
     }

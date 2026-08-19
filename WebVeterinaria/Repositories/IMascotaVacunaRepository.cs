@@ -5,7 +5,7 @@ namespace WebVeterinaria.Repositories
 {
     public interface IMascotaVacunaRepository
     {
-        Task<List<MascotaVacunaListDTO>> GetAllAsync();
+        Task<List<MascotaVacunaListDTO>> GetAllAsync(int? idDueno = null);
 
         Task<MascotaVacuna?> GetByIdAsync(int id);
 

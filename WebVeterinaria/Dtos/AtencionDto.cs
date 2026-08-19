@@ -5,12 +5,24 @@ namespace WebVeterinaria.DTOs
     public class AtencionListDto
     {
         public int IdAtencion { get; set; }
+
         public int IdCita { get; set; }
+
+        public int? IdDueno { get; set; }
+
+        public int? IdVeterinario { get; set; }
+
         public string NombreMascota { get; set; } = string.Empty;
+
+        public string NombreDueno { get; set; } = string.Empty;
+
         public string NombreVeterinario { get; set; } = string.Empty;
+
         public DateTime? Fecha { get; set; }
+
         public string? Diagnostico { get; set; }
     }
+
 
     public class AtencionCreateDto
     {
@@ -28,6 +40,7 @@ namespace WebVeterinaria.DTOs
 
         public string? Observaciones { get; set; }
     }
+
 
     public class AtencionEditDto
     {
@@ -48,10 +61,12 @@ namespace WebVeterinaria.DTOs
         public string? Observaciones { get; set; }
     }
 
+
     // Para el combo de selección de citas disponibles
     public class CitaDisponibleDto
     {
         public int IdCita { get; set; }
-        public string Texto { get; set; } = string.Empty; // "Ej: 05/08/2026 10:30 - Firulais con Dr. Pérez"
+
+        public string Texto { get; set; } = string.Empty;
     }
 }

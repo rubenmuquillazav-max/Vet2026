@@ -1,72 +1,291 @@
 ﻿@model List<WebVeterinaria.DTOs.AtencionListDto>
 
 @{
-    ViewData["Title"] = "Historias Clínicas";
+    ViewData["Title"] = "ATENCIONES";
 }
 
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Historias Clínicas</h1>
-                </div>
-                <div class="col-sm-6 text-right">
-                    <a asp-action="Create" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> Nueva Atención
-                    </a>
-                </div>
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Historias Clínicas</h1>
+            </div>
+
+            <div class="col-sm-6 text-right">
+                <a asp-action="Create" class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    Nueva Atención
+                </a>
             </div>
         </div>
     </div>
+</div>
 
-    <section class="content">
-        <div class="container-fluid">
-            @if (TempData["Success"] != null)
-            {
-                <div class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    @TempData["Success"]
-                </div>
-            }
+<section class="content">
 
-            <div class="card">
-                <div class="card-body">
+    <div class="container-fluid">
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible">
+                <button type="button"
+                        class="close"
+                        data-dismiss="alert">
+                    &times;
+                </button>
+
+                @TempData["Success"]
+            </div>
+        }
+
+
+        <!-- ============================= -->
+        <!-- FILTROS -->
+        <!-- ============================= -->
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-filter"></i>
+                    Buscar atención
+                </h3>
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="Index" method="get">
+
+                    <div class="row">
+
+                        <!-- DUEÑO -->
+                        <div class="col-md-5">
+
+                            <div class="form-group">
+
+                                <label for="idDueno">
+                                    Dueño
+                                </label>
+
+                                <select id="idDueno"
+                                        name="idDueno"
+                                        asp-items="ViewBag.Duenos"
+                                        class="form-control">
+
+                                    <option value="">
+                                        -- Todos los dueños --
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- VETERINARIO -->
+                        <div class="col-md-5">
+
+                            <div class="form-group">
+
+                                <label for="idVeterinario">
+                                    Veterinario
+                                </label>
+
+                                <select id="idVeterinario"
+                                        name="idVeterinario"
+                                        asp-items="ViewBag.Veterinarios"
+                                        class="form-control">
+
+                                    <option value="">
+                                        -- Todos los veterinarios --
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- BOTONES -->
+                        <div class="col-md-2">
+
+                            <div class="form-group">
+
+                                <label>&nbsp;</label>
+
+                                <div>
+
+                                    <button type="submit"
+                                            class="btn btn-primary">
+
+                                        <i class="fas fa-search"></i>
+                                        Buscar
+
+                                    </button>
+
+                                    <a asp-action="Index"
+                                       class="btn btn-secondary">
+
+                                        <i class="fas fa-eraser"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- LISTA DE ATENCIONES -->
+        <!-- ============================= -->
+
+        <div class="card mt-3">
+
+            <div class="card-header">
+
+                <h3 class="card-title">
+                    <i class="fas fa-notes-medical"></i>
+                    Lista de Historias Clínicas
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+
                     <table class="table table-bordered table-striped">
+
                         <thead>
+
                             <tr>
+
                                 <th>#</th>
+
                                 <th>Mascota</th>
+
+                                <th>Dueño</th>
+
                                 <th>Veterinario</th>
+
                                 <th>Fecha</th>
+
                                 <th>Diagnóstico</th>
-                                <th class="text-center">Acciones</th>
+
+                                <th class="text-center">
+                                    Acciones
+                                </th>
+
                             </tr>
+
                         </thead>
+
+
                         <tbody>
-                            @foreach (var item in Model)
+
+                            @if (Model != null && Model.Any())
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            @item.IdAtencion
+                                        </td>
+
+                                        <td>
+                                            @item.NombreMascota
+                                        </td>
+
+                                        <td>
+                                            @item.NombreDueno
+                                        </td>
+
+                                        <td>
+                                            @item.NombreVeterinario
+                                        </td>
+
+                                        <td>
+                                            @item.Fecha?.ToString("dd/MM/yyyy HH:mm")
+                                        </td>
+
+                                        <td>
+                                            @item.Diagnostico
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <a asp-action="Details"
+                                               asp-route-id="@item.IdAtencion"
+                                               class="btn btn-sm btn-info"
+                                               title="Ver detalles">
+
+                                                <i class="fas fa-eye"></i>
+
+                                            </a>
+
+
+                                            <a asp-action="Edit"
+                                               asp-route-id="@item.IdAtencion"
+                                               class="btn btn-sm btn-warning"
+                                               title="Editar">
+
+                                                <i class="fas fa-edit"></i>
+
+                                            </a>
+
+
+                                            <a asp-action="Delete"
+                                               asp-route-id="@item.IdAtencion"
+                                               class="btn btn-sm btn-danger"
+                                               title="Eliminar">
+
+                                                <i class="fas fa-trash"></i>
+
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                            else
                             {
                                 <tr>
-                                    <td>@item.IdAtencion</td>
-                                    <td>@item.NombreMascota</td>
-                                    <td>@item.NombreVeterinario</td>
-                                    <td>@item.Fecha?.ToString("dd/MM/yyyy HH:mm")</td>
-                                    <td>@item.Diagnostico</td>
-                                    <td class="text-center">
-                                        <a asp-action="Details" asp-route-id="@item.IdAtencion" class="btn btn-sm btn-info">
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                        <a asp-action="Edit" asp-route-id="@item.IdAtencion" class="btn btn-sm btn-warning">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <a asp-action="Delete" asp-route-id="@item.IdAtencion" class="btn btn-sm btn-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
+
+                                    <td colspan="7"
+                                        class="text-center text-muted">
+
+                                        <i class="fas fa-info-circle"></i>
+                                        No se encontraron historias clínicas.
+
                                     </td>
+
                                 </tr>
                             }
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
         </div>
-    </section>
+
+    </div>
+
+</section>

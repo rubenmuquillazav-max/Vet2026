@@ -21,9 +21,28 @@ namespace WebVeterinaria.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? idDueno)
         {
-            var registros = await _repository.GetAllAsync();
+            var registros = await _repository.GetAllAsync(idDueno);
+
+            var duenos = await _context.Duenos
+                .Where(d => d.Estado == true)
+                .OrderBy(d => d.Apellidos)
+                .ThenBy(d => d.Nombres)
+                .ToListAsync();
+
+            ViewBag.Duenos = new SelectList(
+                duenos.Select(d => new
+                {
+                    d.IdDueno,
+                    NombreCompleto = $"{d.Apellidos} {d.Nombres} - DNI {d.Dni}"
+                }),
+                "IdDueno",
+                "NombreCompleto",
+                idDueno
+            );
+
+            ViewBag.IdDueno = idDueno;
 
             return View(registros);
         }
